@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg">
+  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-nav" aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="lines"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-lg-center" id="navbar-nav">
+    <div class="additional-nav mobile-search additional-nav-sm hs-menu-flow-horizontal d-lg-none">
+     	<ul class="navbar-nav">
+        <li class="search"><a><input type="search" id="univ-search-input" class="univ-search-input"
+                    placeholder="SEARCH" name="search" autocomplete="on" />
+          <img src="https://f.hubspotusercontent40.net/hubfs/742943/Website/Images/Icons/search.svg" class="search-icon" alt="Search Icon" width="20px" height="20px">
+          </a></li>
+      </ul>
+    </div>
+    <div id="general-nav" class="main-navigation">{% menu "general_nav" site_map_name='General', overrideable=False, root_type='site_root', flyouts='false', max_levels='2', flow='horizontal', label='Advanced Menu' %}</div>
+    <div id="developer-nav" class="main-navigation">{% menu "developer_nav" site_map_name='Developer', overrideable=False, root_type='site_root', flyouts='false', max_levels='2', flow='horizontal', label='Advanced Menu' %}</div>
+    <div id="enterprise-nav" class="main-navigation">{% menu "enterprise_nav" site_map_name='Enterprise', overrideable=False, root_type='site_root', flyouts='false', max_levels='2', flow='horizontal', label='Advanced Menu' %}</div>
+    <div id="partner-nav" class="main-navigation">{% menu "partners_nav" site_map_name='Partner', overrideable=False, root_type='site_root', flyouts='false', max_levels='2', flow='horizontal', label='Advanced Menu' %}</div>
+    <div class="additional-nav additional-nav-sm hs-menu-flow-horizontal d-lg-none">
+     	<ul class="navbar-nav">
+        <li class="dropdown"><a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle">
+          Change Navigation
+          </a>
+          <ul class="dropdown-menu">
+            <li class="enterprise-button"><a href="javascript:;">Enterprise</a></li>
+            <li class="partner-button"><a href="javascript:;">Partners</a></li>
+            <li class="developer-button"><a href="javascript:;">Developer</a></li>
+            <li class="general-button"><a href="javascript:;">General</a></li>
+          </ul>
+        </li>
+        <li><a href="https://accounts.losant.com">
+          Sign In
+          </a>
+        </li>
+  		</ul>
+	  </div>
+    <div class="mobile-drawer" id="mobile-drawer"></div>
+  </div>
+</nav>
+<script id="nav-toggler" type="text/template">
+<svg class="toggler" data-name="toggler" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #cfd1d5;
+      }
+    </style>
+  </defs>
+  <path id="Path_430" data-name="Path 430" class="cls-1" d="M17.069,17.069a10,10,0,1,1,0-14.138A9.99,9.99,0,0,1,17.069,17.069ZM3.678,3.678a8.94,8.94,0,1,0,12.644,0A8.967,8.967,0,0,0,3.678,3.678Z" transform="translate(0 0)"/>
+  <rect id="Rectangle_162" data-name="Rectangle 162" class="cls-1" width="1.063" height="14.971" transform="translate(9.454 2.5)"/>
+  <rect id="Rectangle_163" data-name="Rectangle 163" class="cls-1" width="14.971" height="1.063" transform="translate(2.5 9.454)"/>
+</svg>
+</script>
+  <script>
+  $(".univ-search-input").click(function() {
+	   $(".mobile-drawer").fadeIn();
+	 });
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@3/dist/algoliasearchLite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.find%2CArray.prototype.includes%2CPromise%2CObject.assign%2CObject.entries"></script>

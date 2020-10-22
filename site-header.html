@@ -1,0 +1,57 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: true
+-->
+<header>
+  <div class="header fixed-top">
+    <div class="row no-gutters">
+      <div class="col-6 col-lg-2">
+        <a href="https://www.losant.com/"><img src="https://www.losant.com/hubfs/Website/Images/losant_logo_horizontal_coolwhite.svg" class="logo" alt="Losant Logo"></a>
+      </div>
+      <div class="col-lg-6">
+        {% module "module_160227137489880" path="/site-v3-staging/modules/global/main-navigation", label="main-navigation" %}
+      </div>
+       <div class="col-lg-4">
+        <div class="d-none text-right d-lg-flex justify-content-end">
+          <div id="addtNav">
+            {% module "module_158894953161172" path="/site-v3-staging/modules/global/DRAFT-additional-navigation copy", label="DRAFT-additional-navigation copy" %}
+          </div>
+          <div class="aa-input-container" id="aa-input-container" style="display: none">
+            <div class="outer-layer"><a>
+             <input type="search" id="univ-search-input" class="univ-search-input"
+                              placeholder="SEARCH" name="search" autocomplete="on" />
+              </a>
+            </div>
+            <div class="drawer" id="drawer"></div>
+          </div>
+          <label class="search">
+            <img src="https://www.losant.com/hubfs/Website/Images/Icons/magnifying-glass-icon.svg" class="search-icon" alt="Search Icon">
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<script src='{{ get_asset_url('/site-v3-staging/js/site-search.js') }}'></script>
+<script>
+  $(".search").click(function() {
+    if ( $(".aa-input-container").is(':visible') ){
+      $(".aa-input-container").fadeOut();
+      $("#addtNav").fadeIn();
+    }
+      else{
+	   $(".aa-input-container").fadeIn();
+     $("#addtNav").fadeOut();
+      }
+	 });
+  if ($(window).width() > 900) {
+    $(document).mouseup(function(e) {
+      var container = $(".drawer, .aa-input-container");
+      if (!container.is(e.target) && container.has(e.target).length === 0) 
+      {
+          container.fadeOut();
+        $("#addtNav").show();
+      }
+    });
+  }
+</script>
