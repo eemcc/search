@@ -5,9 +5,9 @@
   <div class="collapse navbar-collapse justify-content-lg-center" id="navbar-nav">
     <div class="additional-nav mobile-search additional-nav-sm hs-menu-flow-horizontal d-lg-none">
      	<ul class="navbar-nav">
-        <li class="search"><a><input type="search" id="univ-search-input" class="univ-search-input"
+        <li class="search"><a><input type="search" id="univ-search-input-mobile" class="univ-search-input"
                     placeholder="SEARCH" name="search" autocomplete="on" />
-          <img src="https://f.hubspotusercontent40.net/hubfs/742943/Website/Images/Icons/search.svg" class="search-icon" alt="Search Icon" width="20px" height="20px">
+          <img src="https://f.hubspotusercontent40.net/hubfs/742943/Website/Images/Icons/search.svg" class="search-icon" alt="Search Icon" width="20px" height="20px" onclick="hideMobile()">
           </a></li>
       </ul>
     </div>
@@ -54,6 +54,9 @@
   $(".univ-search-input").click(function() {
 	   $(".mobile-drawer").fadeIn();
 	 });
+  function hideMobile(){
+    document.getElementById("mobile-drawer").style.display = "none";
+  }
   </script>
 <script src="https://cdn.jsdelivr.net/npm/algoliasearch@3/dist/algoliasearchLite.min.js"></script>
 <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
