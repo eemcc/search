@@ -22,12 +22,16 @@ autocomplete(
           suggestion({url, _highlightResult, _snippetResult, type}) {
             return `
             <a href="${url}">
-              <div>
+              <div class="box">
+                  <div>
                     <h4 style="text-transform: capitalize;">${_highlightResult.header.value} <span style="color: #FF495C;">|</span> ${type}</h4>
+                  </div>
+                  <div>
                     <img src="https://f.hubspotusercontent40.net/hubfs/742943/Website/Images/Icons/ios-arrow-forward.svg" width="30px"; height="30px";>
+                  </div>
               </div>
               <p>${_snippetResult.body.value}</p>
-              </a>`;
+             </a>`;
           },
         },
     }
