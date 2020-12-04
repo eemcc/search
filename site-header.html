@@ -21,7 +21,7 @@
             <div class="drawer" id="drawer"></div>
           </div>
           <label class="search">
-            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 1080 1080"><path class="cls-1 search-icon" style="fill:#FFF;" d="M421.1,828.84c-223,0-404.43-181.42-404.43-404.42S198.1,20,421.1,20,825.51,201.42,825.51,424.42,644.1,828.84,421.1,828.84Zm0-752.34C229.25,76.5,73.17,232.57,73.17,424.42S229.25,772.34,421.1,772.34,769,616.26,769,424.42,612.94,76.5,421.1,76.5Z"/><rect class="cls-1" x="832.51" y="620.47" width="56.49" height="504.87" transform="translate(-364.91 897.65) rotate(-46.56)"/><path class="cls-1" d="M421.1,828.84c-223,0-404.43-181.42-404.43-404.42S198.1,20,421.1,20,825.51,201.42,825.51,424.42,644.1,828.84,421.1,828.84Zm0-752.34C229.25,76.5,73.17,232.57,73.17,424.42S229.25,772.34,421.1,772.34,769,616.26,769,424.42,612.94,76.5,421.1,76.5Z"/><path class="cls-1" d="M421.1,828.84c-223,0-404.43-181.42-404.43-404.42S198.1,20,421.1,20,825.51,201.42,825.51,424.42,644.1,828.84,421.1,828.84Zm0-752.34C229.25,76.5,73.17,232.57,73.17,424.42S229.25,772.34,421.1,772.34,769,616.26,769,424.42,612.94,76.5,421.1,76.5Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" id="Layer_1" data-name="Layer 1" viewBox="0 0 1080 1080"><path class="cls-1 search-icon" style="fill:#FFF;" d="M421.1,828.84c-223,0-404.43-181.42-404.43-404.42S198.1,20,421.1,20,825.51,201.42,825.51,424.42,644.1,828.84,421.1,828.84Zm0-752.34C229.25,76.5,73.17,232.57,73.17,424.42S229.25,772.34,421.1,772.34,769,616.26,769,424.42,612.94,76.5,421.1,76.5Z"/><rect class="cls-1" x="832.51" y="620.47" width="56.49" height="504.87" transform="translate(-364.91 897.65) rotate(-46.56)"/><path class="cls-1" d="M421.1,828.84c-223,0-404.43-181.42-404.43-404.42S198.1,20,421.1,20,825.51,201.42,825.51,424.42,644.1,828.84,421.1,828.84Zm0-752.34C229.25,76.5,73.17,232.57,73.17,424.42S229.25,772.34,421.1,772.34,769,616.26,769,424.42,612.94,76.5,421.1,76.5Z"/><path class="cls-1" d="M421.1,828.84c-223,0-404.43-181.42-404.43-404.42S198.1,20,421.1,20,825.51,201.42,825.51,424.42,644.1,828.84,421.1,828.84Zm0-752.34C229.25,76.5,73.17,232.57,73.17,424.42S229.25,772.34,421.1,772.34,769,616.26,769,424.42,612.94,76.5,421.1,76.5Z"/></svg>
           </label>
           <div id="addtNav">
             {% module "module_158894953161172" path="/site-v3-staging/modules/global/DRAFT-additional-navigation copy", label="DRAFT-additional-navigation copy" %}
@@ -33,6 +33,7 @@
 </header>
 <script src='{{ get_asset_url('/site-v3-staging/js/site-search.js') }}'></script>
 <script>
+ if ($(window).width() > 900) {
   $(".search").click(function() {
     if ( $(".aa-input-container").is(':visible') ){
       $(".aa-input-container").hide();
@@ -42,9 +43,10 @@
 	   $(".aa-input-container").show();
      $("#addtNav").hide();
      $(".univ-search-input").focus();
-      $(".cls-1").css({'fill': '#000'});
+      $(".search-icon").css({'display': 'none'});
     }
 	 });
+ }
   
   if( $(".univ-search-input-mobile" || ".univ-search-input-desktop" ).is(':visible') ){
     $(".aa-input-container").hide();
@@ -59,8 +61,10 @@
           container.hide();
         $('input').val('');
         $("#addtNav").toggle();
-        $(".cls-1").css({'fill': '#FFF'});
+        $(".search-icon").css({'display': 'flex'});
       }
     });
   }
+
+
 </script>
