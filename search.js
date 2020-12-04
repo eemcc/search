@@ -23,10 +23,10 @@ autocomplete(
             return `
             <a href="${url}">
               <div class="box">
-                  <div>
+                  <div style="width:70%;">
                     <h4 style="text-transform: capitalize;">${_highlightResult.header.value} <span style="color: #FF495C;">|</span> ${type}</h4>
                   </div>
-                  <div>
+                  <div style="width:20%;">
                     <img src="https://f.hubspotusercontent40.net/hubfs/742943/Website/Images/Icons/ios-arrow-forward.svg" width="30px"; height="30px";>
                   </div>
               </div>
@@ -54,10 +54,10 @@ autocomplete(
             return `
             <a href="${url}">
               <div class="box">
-                  <div>
+                  <div style="width:70%;">
                     <h4 style="text-transform: capitalize;">${_highlightResult.header.value} <span style="color: #FF495C;">|</span> ${type}</h4>
                   </div>
-                  <div>
+                  <div style="width:20%;">
                     <img src="https://f.hubspotusercontent40.net/hubfs/742943/Website/Images/Icons/ios-arrow-forward.svg" width="30px"; height="30px";>
                   </div>
               </div>
