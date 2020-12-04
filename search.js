@@ -4,7 +4,7 @@ $(".search").click(function() {
 
 if (!window.losantAlgoliaSearchClient && !window.search) {
   window.losantAlgoliaSearchClient = algoliasearch('3J2D8ITRRP', '7aaf1b8db0ab4f0de35c2ed6649efeb5');
-  window.search = losantAlgoliaSearchClient.initIndex('dev_MarketingSite');
+  window.search = losantAlgoliaSearchClient.initIndex('prod_MarketingSite');
 }
 
 autocomplete(
@@ -22,16 +22,10 @@ autocomplete(
           suggestion({url, _highlightResult, _snippetResult, type}) {
             return `
             <a href="${url}">
-              <table>
-                <tr>
-                  <th>
+              <div>
                     <h4 style="text-transform: capitalize;">${_highlightResult.header.value} <span style="color: #FF495C;">|</span> ${type}</h4>
-                  </th>
-                  <th>
                     <img src="https://f.hubspotusercontent40.net/hubfs/742943/Website/Images/Icons/ios-arrow-forward.svg" width="30px"; height="30px";>
-                  </th>
-                </tr>
-              </table>
+              </div>
               <p>${_snippetResult.body.value}</p>
               </a>`;
           },
@@ -55,16 +49,14 @@ autocomplete(
           suggestion({url, _highlightResult, _snippetResult, type}) {
             return `
             <a href="${url}">
-              <table>
-                <tr>
-                  <th>
+              <div class="box">
+                  <div>
                     <h4 style="text-transform: capitalize;">${_highlightResult.header.value} <span style="color: #FF495C;">|</span> ${type}</h4>
-                  </th>
-                  <th>
+                  </div>
+                  <div>
                     <img src="https://f.hubspotusercontent40.net/hubfs/742943/Website/Images/Icons/ios-arrow-forward.svg" width="30px"; height="30px";>
-                  </th>
-                </tr>
-              </table>
+                  </div>
+              </div>
               <p>${_snippetResult.body.value}</p>
               </a>`;
           },
